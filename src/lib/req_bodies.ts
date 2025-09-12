@@ -12,6 +12,7 @@ export const RefId = t.Object({
 	ref_id: t.String()
 });
 
-export const TopCut = t.Object({
+export const NewTournament = t.Object({
+	abbr: t.String(),
 	top_cut: t.Number()
 });
