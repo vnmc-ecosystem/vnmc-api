@@ -1,7 +1,7 @@
 import { t } from "elysia";
 
 export const Year = t.Object({
-	year: t.Number()
+	year: t.Number({ error: "Year must be a number" })
 });
 
 export const Round = t.Object({
@@ -14,7 +14,7 @@ export const Round = t.Object({
 		"sf",
 		"f",
 		"gf"
-	])	
+	], { error: "Unknown round name" })
 });
 
 export const Event = t.Object({
@@ -28,11 +28,11 @@ export const Event = t.Object({
 		"sf",
 		"f",
 		"gf"
-	])
+	], { error: "Unknown event name" })
 });
 
 export const MapCode = t.Object({
-	code: t.RegExp("^(?:[1-5]|(?:RC[1-7]|LN[1-4]|HB[1-3]|SV[1-2]|EX[1-2])|TB)$")
+	code: t.RegExp("^(?:[1-5]|(?:RC[1-7]|LN[1-4]|HB[1-3]|SV[1-2]|EX[1-2])|TB)$", { error: "Unknown map code" })
 });
 
 export const Id = t.Object({
@@ -56,5 +56,5 @@ export const Role = t.Object({
 		"storyboarder",
 		"map_description_writer",
 		"lore_builder"
-	])
+	], { error: "Unknown role" })
 });

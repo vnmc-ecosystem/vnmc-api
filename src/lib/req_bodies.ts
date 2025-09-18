@@ -14,5 +14,5 @@ export const RefId = t.Object({
 
 export const NewTournament = t.Object({
 	abbr: t.String(),
-	top_cut: t.Number()
+	top_cut: t.Number({ error: "Top cut must be a number" }),
 });

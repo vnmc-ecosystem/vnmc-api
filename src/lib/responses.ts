@@ -226,12 +226,6 @@ export const common_responses = {
 	500: Exception
 };
 
-export class InvalidRequestError extends Error {
-	constructor() {
-		super("Invalid Parameter or Body");
-	}
-}
-
 export class NotFoundError extends Error {
 	constructor() {
 		super("Resource Not Found");
