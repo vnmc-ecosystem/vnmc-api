@@ -104,7 +104,7 @@ export const Match = t.Object({
 	abbr: t.String(),
 	year: t.Number(),
 	round: t.String(),
-	match_id: t.Optional(t.String()),
+	match_id: t.Optional(t.Number()),
 	player_1_name: t.String(),
 	player_1_url: t.String(),
 	player_1_seed: t.Number(),
@@ -155,7 +155,7 @@ export const MappoolMutation = t.Object({
 export const MapMutation = t.Object({
 	round: t.String(),
 	code: t.String(),
-	map_id: t.String()
+	map_id: t.Number()
 });
 
 export const ScheduleCreateUpdate = t.Object({
@@ -190,16 +190,16 @@ export const StaffUpdate = t.Object({
 });
 
 export const MatchRefUpdate = t.Object({
-	match_id: t.String(),
+	match_id: t.Number(),
 	referee: t.String()
 });
 
 export const MatchRefDelete = t.Object({
-	match_id: t.String()
+	match_id: t.Number()
 });
 
 export const MatchTimeUpdate = t.Object({
-	match_id: t.String(),
+	match_id: t.Number(),
 	time: t.Number()
 });
 

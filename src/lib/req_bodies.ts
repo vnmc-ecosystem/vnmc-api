@@ -1,7 +1,7 @@
 import { t } from "elysia";
 
 export const MapId = t.Object({
-	map_id: t.String()
+	map_id: t.Number()
 });
 
 export const Time = t.Object({
@@ -9,7 +9,7 @@ export const Time = t.Object({
 });
 
 export const RefId = t.Object({
-	ref_id: t.String()
+	ref_id: t.Number()
 });
 
 export const NewTournament = t.Object({

@@ -36,7 +36,7 @@ export const MapCode = t.Object({
 });
 
 export const Id = t.Object({
-	id: t.String()
+	id: t.Number()
 });
 
 export const Role = t.Object({
