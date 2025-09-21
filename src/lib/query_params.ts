@@ -14,5 +14,5 @@ export const Sort = t.Object({
 });
 
 export const Limit = t.Object({
-	limit: t.Optional(t.Integer({ error: "Limit must be an integer" }))
+	limit: t.Optional(t.Integer({ minimum: 1, error: "Limit must be an integer and greater than 0" }))
 });

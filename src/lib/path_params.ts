@@ -1,7 +1,7 @@
 import { t } from "elysia";
 
 export const Year = t.Object({
-	year: t.Number({ error: "Year must be a number" })
+	year: t.Number({ minimum: 2025, error: "Year must be a number and greater than or equal to 2025" })
 });
 
 export const Round = t.Object({
@@ -36,7 +36,7 @@ export const MapCode = t.Object({
 });
 
 export const Id = t.Object({
-	id: t.Number()
+	id: t.Number({ minimum: 1, error: "ID must be greater than 0" })
 });
 
 export const Role = t.Object({
