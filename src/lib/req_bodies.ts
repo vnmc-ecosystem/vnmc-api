@@ -13,6 +13,6 @@ export const RefId = t.Object({
 });
 
 export const NewTournament = t.Object({
-	abbr: t.String(),
+	abbr: t.String({ maxLength: 10, error: "Abbreviation must be less than 10 characters long" }), // prevent injections
 	top_cut: t.Number({ minimum: 2, error: "Top cut must be a number and greater than 2" })
 });
