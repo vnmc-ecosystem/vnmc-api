@@ -1,7 +1,7 @@
 import { t } from "elysia";
 
 export const Name = t.Object({
-	name: t.Optional(t.String({ maxLength: 10 })) // prevent injections
+	name: t.Optional(t.String({ maxLength: 10, error: "Keyword must be less than 10 characters long" })) // prevent injections
 });
 
 export const Sort = t.Object({
