@@ -32,7 +32,7 @@ export const Event = t.Object({
 });
 
 export const MapCode = t.Object({
-	code: t.RegExp("^(?:[1-5]|(?:RC[1-7]|LN[1-4]|HB[1-3]|SV[1-2]|EX[1-2])|TB)$", { error: "Unknown map code" })
+	code: t.RegExp("^(?:[1-6]|(?:RC[1-7]|LN[1-6]|HB[1-3]|SV[1-2]|EX[1-2])|TB)$", { error: "Unknown map code" })
 });
 
 export const Id = t.Object({
