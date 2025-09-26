@@ -1,7 +1,8 @@
 import { Elysia } from "elysia";
+import { map } from "./routes/map/route.ts";
 
 const app = new Elysia()
-	.get("/", () => "Hello Elysia")
+	.use(map)
 	.listen(8000);
 
 console.log(
