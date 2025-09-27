@@ -11,6 +11,7 @@ export const Mappool = t.Object({
 			code: t.String(),
 			title: t.String(),
 			diff_name: t.String(),
+			pattern: t.String(),
 			url: t.String()
 		})
 	)
@@ -21,6 +22,7 @@ export const Map = t.Object({
 	year: t.Number(),
 	round: t.String(),
 	code: t.String(),
+	pattern: t.String(),
 	map: t.Object({
 		title: t.String(),
 		diff_name: t.String(),
