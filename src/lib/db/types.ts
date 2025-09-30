@@ -11,6 +11,10 @@ type Ranking = "top1" | "top2" | "top3" | "top4" | "top6" | "top8" | "top12" | "
 type Role = "host" | "cohost" | "designer" | "referee" | "mappooler" | "mapper" | "playtester" | "streamer" | "commentator" | "statistician" | "spreadsheeter" | "consultant" | "storyboarder" | "map_description_writer" | "lore_builder"
 
 type Event = "registration" | "qual" | "ro64" | "ro32" | "ro16" | "qf" | "sf" | "f" | "gf"
+type Schedule = {
+	start: number
+	end: number
+}
 
 type Round = "qual" | "ro64" | "ro32" | "ro16" | "qf" | "sf" | "f" | "gf"
 type Category = "RC" | "HB" | "LN" | "SV" | "EX" | "TB"
@@ -33,7 +37,7 @@ type Match = {
 	match_time?: number
 	referee?: PlayerId
 }
-type LegMatch = Record<Leg, Match>
+type LegMatch = Record<Leg, Match[]>
 type BracketMatch = Record<Bracket, Match[] | LegMatch>
 type NoBracketMatch = Match[]
 
@@ -42,7 +46,7 @@ export type Tournament = {
 	abbr: string
 	year: number
 	registration: PlayerId[]
-	schedules: Record<Event, PlayerId[]>
+	schedules: Record<Event, Schedule>
 	staff: Record<Role, PlayerId[]>
 	mappool: Record<Round, Map[] | NonQualifierPool>
 	matches: Record<Round, MatchId[] | NoBracketMatch | BracketMatch>
