@@ -18,11 +18,14 @@ type Schedule = {
 
 type Round = "qual" | "ro64" | "ro32" | "ro16" | "qf" | "sf" | "f" | "gf"
 type Category = "RC" | "HB" | "LN" | "SV" | "EX" | "TB"
+type Index = "1" | "2" | "3" | "4" | "5" | "6" | "7"
+
 export type Map = {
 	id: MapId
 	pattern: string
 }
-export type NonQualifierPool = Record<Category, Map[]>
+export type MapEntries = Record<Index, Map>
+export type NonQualifierPool = Record<Category, MapEntries>
 
 type Bracket = "losers" | "winners"
 type Leg = "leg1" | "leg2"
@@ -48,7 +51,7 @@ export type Tournament = {
 	registration: PlayerId[]
 	schedules: Record<Event, Schedule>
 	staff: Record<Role, PlayerId[]>
-	mappool: Record<Round, Map[] | NonQualifierPool>
+	mappool: Record<Round, MapEntries | NonQualifierPool>
 	matches: Record<Round, MatchId[] | NoBracketMatch | BracketMatch>
 	standings: Record<Ranking, PlayerId[]>
 	qual_seeding_reveal: number
