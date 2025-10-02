@@ -160,6 +160,11 @@ export const MapMutation = t.Object({
 	map_id: t.Number()
 });
 
+export const MapDeletion = t.Object({
+	round: t.String(),
+	code: t.String()
+});
+
 export const ScheduleCreateUpdate = t.Object({
 	abbr: t.String(),
 	year: t.Number(),

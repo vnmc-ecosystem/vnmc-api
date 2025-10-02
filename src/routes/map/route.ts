@@ -7,7 +7,8 @@ import {
 import { MapId } from "$lib/req_bodies";
 import {
 	Map,
-	MapMutation
+	MapMutation,
+	MapDeletion
 } from "$lib/responses";
 
 export const map = new Elysia({ prefix: "/map/:round/:code" })
@@ -79,13 +80,12 @@ export const map = new Elysia({ prefix: "/map/:round/:code" })
 		({ params: { round, code } }) => {
 			return {
 				round,
-				code,
-				map_id: 123,
+				code
 			};
 		},
 		{
 			response: {
-				200: MapMutation
+				200: MapDeletion
 			}
 		}
 	);
