@@ -122,3 +122,12 @@ export type AvailableTimes = {
 	_id: number
 	time_slots: TimeSlot[]
 }
+
+
+
+export type MapLimit = {
+	_id: number
+	qual: number
+} & {
+	[K in Exclude<Round, "qual">]: Record<Exclude<Category, "TB">, number>
+}

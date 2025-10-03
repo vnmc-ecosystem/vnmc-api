@@ -1,6 +1,6 @@
 import { secrets } from "bun";
 import { MongoClient } from "mongodb";
-import type { Tournament, Beatmap, User, Session, Score, AvailableTimes } from "./types";
+import type { Tournament, Beatmap, User, Session, Score, AvailableTimes, MapLimit } from "./types";
 
 const mongodb_uri = await secrets.get({
 	service: "vnmc-api",
@@ -22,5 +22,6 @@ const users = db.collection<User>("users");
 const sessions = db.collection<Session>("sessions");
 const scores = db.collection<Score>("scores");
 const available_times = db.collection<AvailableTimes>("available_times");
+const map_limit = db.collection<MapLimit>("map_limit");
 
-export { tournaments, beatmaps, users, sessions, scores, available_times };
+export { tournaments, beatmaps, users, sessions, scores, available_times, map_limit };
