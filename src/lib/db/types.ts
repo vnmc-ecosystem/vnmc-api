@@ -16,8 +16,8 @@ type Schedule = {
 	end: number
 }
 
-type Round = "qual" | "ro64" | "ro32" | "ro16" | "qf" | "sf" | "f" | "gf"
-type Category = "RC" | "HB" | "LN" | "SV" | "EX" | "TB"
+export type Round = "qual" | "ro64" | "ro32" | "ro16" | "qf" | "sf" | "f" | "gf"
+export type Category = "RC" | "HB" | "LN" | "SV" | "EX" | "TB"
 type Index = "1" | "2" | "3" | "4" | "5" | "6" | "7"
 
 export type Map = {
