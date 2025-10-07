@@ -49,11 +49,11 @@ export type Tournament = {
 	abbr: string
 	year: number
 	registration: PlayerId[]
-	schedules: Record<Event, Schedule>
-	staff: Record<Role, PlayerId[]>
-	mappool: Record<Round, MapEntries | NonQualifierPool>
-	matches: Record<Round, MatchId[] | NoBracketMatch | BracketMatch>
-	standings: Record<Ranking, PlayerId[]>
+	schedules: Partial<Record<Event, Schedule>>
+	staff: Partial<Record<Role, PlayerId[]>>
+	mappool: Partial<Record<Round, MapEntries | NonQualifierPool>>
+	matches: Partial<Record<Round, MatchId[] | NoBracketMatch | BracketMatch>>
+	standings: Partial<Record<Ranking, PlayerId[]>>
 	qual_seeding_reveal: number
 	top_cut: number
 }
