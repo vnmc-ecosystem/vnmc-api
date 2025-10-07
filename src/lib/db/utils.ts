@@ -7,7 +7,7 @@ export function generate_path(round: Round, code: string) {
 	if (round === "qual") path += `.${code}`;
 	else path += `.${code.slice(0, 2)}`;
 
-	if (round !== "qual") {
+	if (round !== "qual" && code.length > 1) {
 		if (code === "TB") path += ".1";
 		else path += `.${code.slice(2)}`;
 	}
