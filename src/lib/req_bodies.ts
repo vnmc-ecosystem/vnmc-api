@@ -8,6 +8,11 @@ export const Time = t.Object({
 	time: t.Number({ minimum: 0, error: "Time must be later than Jan 1, 1970" })
 });
 
+export const StartAndEndTime = t.Object({
+	start_time: t.Number({ minimum: 0, error: "Start time must be later than Jan 1, 1970" }),
+	end_time: t.Number({ minimum: 0, error: "End time must be later than Jan 1, 1970" })
+});
+
 export const RefId = t.Object({
 	ref_id: t.Number({ minimum: 1, error: "Referee ID must be greater than 0" })
 });
