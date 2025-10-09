@@ -1,7 +1,8 @@
 import { Elysia, t } from "elysia";
 import { error_handler } from "$lib/handlers";
 import {
-	round_code_guard,
+	round_guard,
+	map_code_guard,
 	common_responses_guard
 } from "$lib/guards";
 import { MapId } from "$lib/req_bodies";
@@ -14,7 +15,8 @@ import {
 export const map = new Elysia({ prefix: "/map/:round/:code" })
 	.use(error_handler)
 	.use(common_responses_guard)
-	.use(round_code_guard)
+	.use(round_guard)
+	.use(map_code_guard)
 	.get(
 		"/",
 		({ params: { round, code } }) => {

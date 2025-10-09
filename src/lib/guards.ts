@@ -42,28 +42,6 @@ export const role_guard = new Elysia()
 
 
 
-// * combined guards (this is really stupid pls support )
-
-export const round_code_guard = new Elysia()
-	.guard({
-		params: t.Object({
-			...Round.properties,
-			...MapCode.properties
-		})
-	})
-	.as("scoped");
-
-export const id_role_guard = new Elysia()
-	.guard({
-		params: t.Object({
-			...Id.properties,
-			...Role.properties
-		})
-	})
-	.as("scoped");
-
-
-
 // * common exception responses guard
 
 export const common_responses_guard = new Elysia()
