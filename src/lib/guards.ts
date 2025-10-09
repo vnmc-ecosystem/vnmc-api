@@ -8,37 +8,37 @@ export const year_guard = new Elysia()
 	.guard({
 		params: Year
 	})
-	.as("global");
+	.as("scoped");
 
 export const round_guard = new Elysia()
 	.guard({
 		params: Round,
 	})
-	.as("global");
+	.as("scoped");
 
 export const event_guard = new Elysia()
 	.guard({
 		params: Event
 	})
-	.as("global");
+	.as("scoped");
 
 export const map_code_guard = new Elysia()
 	.guard({
 		params: MapCode
 	})
-	.as("global");
+	.as("scoped");
 
 export const id_guard = new Elysia()
 	.guard({
 		params: Id
 	})
-	.as("global");
+	.as("scoped");
 
 export const role_guard = new Elysia()
 	.guard({
 		params: Role
 	})
-	.as("global");
+	.as("scoped");
 
 
 
@@ -51,7 +51,7 @@ export const round_code_guard = new Elysia()
 			...MapCode.properties
 		})
 	})
-	.as("global");
+	.as("scoped");
 
 export const id_role_guard = new Elysia()
 	.guard({
@@ -60,7 +60,7 @@ export const id_role_guard = new Elysia()
 			...Role.properties
 		})
 	})
-	.as("global");
+	.as("scoped");
 
 
 
@@ -70,4 +70,4 @@ export const common_responses_guard = new Elysia()
 	.guard({
 		response: common_responses
 	})
-	.as("global");
+	.as("scoped");
