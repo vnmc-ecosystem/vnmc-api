@@ -6,6 +6,7 @@ import {
 } from "$lib/guards";
 import { NewTournament } from '$lib/req_bodies';
 import { TournamentAdd } from '$lib/responses';
+import { tournaments } from '$lib/db/auth';
 
 export const tournament = new Elysia({ prefix: '/tournament' })
 	.use(error_handler)
@@ -13,7 +14,21 @@ export const tournament = new Elysia({ prefix: '/tournament' })
 	.use(year_guard)
 	.post(
 		"/:year",
-		({ params: { year }, body: { abbr, top_cut }, status }) => {
+		async ({ params: { year }, body: { abbr, top_cut }, status }) => {
+			await tournaments.insertOne({
+				_id: 7,
+				abbr,
+				year,
+				registration: [],
+				schedules: {},
+				staff: {},
+				mappool: {},
+				matches: {},
+				standings: {},
+				qual_seeding_reveal: 123123123123123,
+				top_cut
+			});
+
 			return status(201, {
 				abbr,
 				year
